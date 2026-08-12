@@ -54,12 +54,14 @@ const articles = [
 ];
 
 function ArticleCard({
+  id,
   title,
   date,
   category,
   image,
   delay = 0,
 }: {
+  id: number;
   title: string;
   date: string;
   category: string;
@@ -68,7 +70,7 @@ function ArticleCard({
 }) {
   return (
     <motion.a
-      href="#"
+      href={`/preview-blog/article/${id}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
@@ -136,6 +138,7 @@ export function Blog1() {
               {articles.map((article, idx) => (
                 <ArticleCard
                   key={article.id}
+                  id={article.id}
                   title={article.title}
                   date={article.date}
                   category={article.category}
