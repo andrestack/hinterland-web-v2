@@ -44,7 +44,8 @@
   --breakpoint-xl: 80rem;
   --breakpoint-2xl: 86rem;
   --font-mono: var(--font-geist-mono);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-instrument-sans);
+  --font-display: var(--font-fraunces);
 }
 
 @layer utilities {
@@ -87,80 +88,87 @@
 }
 
 :root {
-  --background: oklch(100% 0 0deg);
-  --foreground: oklch(14.5% 0 0deg);
-  --card: oklch(96.5% 0.005 265deg);
-  --card-foreground: oklch(14.5% 0 0deg);
-  --popover: oklch(100% 0 0deg);
-  --popover-foreground: oklch(14.5% 0 0deg);
-  --primary: oklch(20.5% 0 0deg);
-  --primary-foreground: oklch(98.5% 0 0deg);
-  --secondary: oklch(97% 0 0deg);
-  --secondary-foreground: oklch(20.5% 0 0deg);
-  --muted: oklch(97% 0 0deg);
-  --muted-foreground: oklch(55.6% 0 0deg);
-  --accent: oklch(97% 0 0deg);
-  --accent-foreground: oklch(20.5% 0 0deg);
-  --destructive: oklch(57.7% 0.245 27.325deg);
-  --destructive-foreground: oklch(57.7% 0.245 27.325deg);
-  --border: oklch(92.2% 0 0deg);
-  --input: oklch(92.2% 0 0deg);
-  --ring: oklch(70.8% 0 0deg);
-  --chart-1: oklch(64.6% 0.222 41.116deg);
-  --chart-2: oklch(60% 0.118 184.704deg);
-  --chart-3: oklch(39.8% 0.07 227.392deg);
-  --chart-4: oklch(82.8% 0.189 84.429deg);
-  --chart-5: oklch(76.9% 0.188 70.08deg);
-  --radius: 0.625rem;
-  --sidebar: oklch(98.5% 0 0deg);
-  --sidebar-foreground: oklch(14.5% 0 0deg);
-  --sidebar-primary: oklch(20.5% 0 0deg);
-  --sidebar-primary-foreground: oklch(98.5% 0 0deg);
-  --sidebar-accent: oklch(97% 0 0deg);
-  --sidebar-accent-foreground: oklch(20.5% 0 0deg);
-  --sidebar-border: oklch(92.2% 0 0deg);
-  --sidebar-ring: oklch(70.8% 0 0deg);
-  --success: oklch(78% 0.08 200deg);
-  --warning: oklch(89% 0.1 75deg);
-  --error: oklch(75% 0.15 25deg);
+  /* Light mode — "daytime hinterland": cream sky/cloud tones, sage-cream surfaces,
+     near-black indigo text (mirrors the dark-mode background for continuity),
+     gold accent darkened for AA contrast on a light ground. */
+  --background: #f7f2e6;
+  --foreground: #14181f;
+  --card: #efe7d4;
+  --card-foreground: #14181f;
+  --popover: #f7f2e6;
+  --popover-foreground: #14181f;
+  --primary: #a9803a;
+  --primary-foreground: #14181f;
+  --secondary: #33421f;
+  --secondary-foreground: #f7f2e6;
+  --muted: #efe9da;
+  --muted-foreground: #6b6355;
+  --accent: #a9803a;
+  --accent-foreground: #14181f;
+  --destructive: #a6432b;
+  --destructive-foreground: #f7f2e6;
+  --border: #e0d6be;
+  --input: #e0d6be;
+  --ring: #a9803a;
+  --chart-1: #a9803a;
+  --chart-2: #33421f;
+  --chart-3: #5c6b6b;
+  --chart-4: #a6432b;
+  --chart-5: #14181f;
+  /* radius-sm(0) radius-md(2px, buttons) radius-lg(4px) radius-xl(8px) — sharp by design */
+  --radius: 0.25rem;
+  --sidebar: #efe7d4;
+  --sidebar-foreground: #14181f;
+  --sidebar-primary: #a9803a;
+  --sidebar-primary-foreground: #14181f;
+  --sidebar-accent: #efe9da;
+  --sidebar-accent-foreground: #14181f;
+  --sidebar-border: #e0d6be;
+  --sidebar-ring: #a9803a;
+  --success: #3d6b4a;
+  --warning: #8a6a22;
+  --error: #a6432b;
 }
 
 [data-theme='dark'] {
-  --background: oklch(14.5% 0 0deg);
-  --foreground: oklch(98.5% 0 0deg);
-  --card: oklch(17% 0 0deg);
-  --card-foreground: oklch(98.5% 0 0deg);
-  --popover: oklch(14.5% 0 0deg);
-  --popover-foreground: oklch(98.5% 0 0deg);
-  --primary: oklch(98.5% 0 0deg);
-  --primary-foreground: oklch(20.5% 0 0deg);
-  --secondary: oklch(26.9% 0 0deg);
-  --secondary-foreground: oklch(98.5% 0 0deg);
-  --muted: oklch(26.9% 0 0deg);
-  --muted-foreground: oklch(70.8% 0 0deg);
-  --accent: oklch(26.9% 0 0deg);
-  --accent-foreground: oklch(98.5% 0 0deg);
-  --destructive: oklch(39.6% 0.141 25.723deg);
-  --destructive-foreground: oklch(63.7% 0.237 25.331deg);
-  --border: oklch(26.9% 0 0deg);
-  --input: oklch(26.9% 0 0deg);
-  --ring: oklch(43.9% 0 0deg);
-  --chart-1: oklch(48.8% 0.243 264.376deg);
-  --chart-2: oklch(69.6% 0.17 162.48deg);
-  --chart-3: oklch(76.9% 0.188 70.08deg);
-  --chart-4: oklch(62.7% 0.265 303.9deg);
-  --chart-5: oklch(64.5% 0.246 16.439deg);
-  --sidebar: oklch(20.5% 0 0deg);
-  --sidebar-foreground: oklch(98.5% 0 0deg);
-  --sidebar-primary: oklch(48.8% 0.243 264.376deg);
-  --sidebar-primary-foreground: oklch(98.5% 0 0deg);
-  --sidebar-accent: oklch(26.9% 0 0deg);
-  --sidebar-accent-foreground: oklch(98.5% 0 0deg);
-  --sidebar-border: oklch(26.9% 0 0deg);
-  --sidebar-ring: oklch(43.9% 0 0deg);
-  --success: oklch(28% 0.1 200deg);
-  --warning: oklch(35% 0.08 70deg);
-  --error: oklch(45% 0.1 25deg);
+  /* Dark mode — "night hinterland": near-black indigo sky, deep teal surfaces,
+     warm cream text, moon-gold accent. Same accent hue as light mode is the
+     connective tissue between the two. Approved 2026-08-20. */
+  --background: #10141c;
+  --foreground: #f0e9d8;
+  --card: #16323a;
+  --card-foreground: #f0e9d8;
+  --popover: #10141c;
+  --popover-foreground: #f0e9d8;
+  --primary: #c9a24b;
+  --primary-foreground: #10141c;
+  --secondary: #2b3a24;
+  --secondary-foreground: #f0e9d8;
+  --muted: #1b2530;
+  --muted-foreground: #b9bfc0;
+  --accent: #c9a24b;
+  --accent-foreground: #10141c;
+  --destructive: #c9573a;
+  --destructive-foreground: #10141c;
+  --border: #2a333a;
+  --input: #2a333a;
+  --ring: #c9a24b;
+  --chart-1: #c9a24b;
+  --chart-2: #2b3a24;
+  --chart-3: #d8ded8;
+  --chart-4: #c9573a;
+  --chart-5: #f0e9d8;
+  --sidebar: #16323a;
+  --sidebar-foreground: #f0e9d8;
+  --sidebar-primary: #c9a24b;
+  --sidebar-primary-foreground: #10141c;
+  --sidebar-accent: #1b2530;
+  --sidebar-accent-foreground: #f0e9d8;
+  --sidebar-border: #2a333a;
+  --sidebar-ring: #c9a24b;
+  --success: #4f8a63;
+  --warning: #c98f3a;
+  --error: #c9573a;
 }
 
 @theme inline {

@@ -81,7 +81,7 @@ export default function Cta8() {
   return (
     <section
       ref={sectionRef}
-      className="@container relative w-full min-h-[var(--rb-section-min-h,100vh)] flex flex-col items-center justify-start py-20 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 bg-white dark:bg-neutral-950 overflow-hidden"
+      className="@container relative w-full min-h-[var(--rb-section-min-h,100vh)] flex flex-col items-center justify-start py-20 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 bg-card overflow-hidden"
     >
       <div className="relative flex flex-col items-center z-10">
         <motion.button
@@ -91,7 +91,7 @@ export default function Cta8() {
           transition={{ duration: 0.6 }}
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
-          className="px-10 py-4 rounded-sm bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 text-base font-medium cursor-pointer"
+          className="px-10 py-4 rounded-sm bg-primary text-primary-foreground text-base font-medium cursor-pointer"
         >
           Start creating
         </motion.button>
@@ -100,7 +100,7 @@ export default function Cta8() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="mt-5 text-sm text-neutral-500 dark:text-neutral-400"
+          className="mt-5 text-sm text-muted-foreground"
         >
           Free for 14 days
         </motion.p>
@@ -110,14 +110,14 @@ export default function Cta8() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-6 sm:inset-8 lg:inset-10 z-0"
       >
-        <span className="absolute -top-1.5 -left-1.5 w-3 h-px bg-neutral-300 dark:bg-neutral-700" />
-        <span className="absolute -top-1.5 -left-1.5 h-3 w-px bg-neutral-300 dark:bg-neutral-700" />
-        <span className="absolute -top-1.5 -right-1.5 w-3 h-px bg-neutral-300 dark:bg-neutral-700" />
-        <span className="absolute -top-1.5 -right-1.5 h-3 w-px bg-neutral-300 dark:bg-neutral-700" />
-        <span className="absolute -bottom-1.5 -left-1.5 w-3 h-px bg-neutral-300 dark:bg-neutral-700" />
-        <span className="absolute -bottom-1.5 -left-1.5 h-3 w-px bg-neutral-300 dark:bg-neutral-700" />
-        <span className="absolute -bottom-1.5 -right-1.5 w-3 h-px bg-neutral-300 dark:bg-neutral-700" />
-        <span className="absolute -bottom-1.5 -right-1.5 h-3 w-px bg-neutral-300 dark:bg-neutral-700" />
+        <span className="absolute -top-1.5 -left-1.5 w-3 h-px bg-border" />
+        <span className="absolute -top-1.5 -left-1.5 h-3 w-px bg-border" />
+        <span className="absolute -top-1.5 -right-1.5 w-3 h-px bg-border" />
+        <span className="absolute -top-1.5 -right-1.5 h-3 w-px bg-border" />
+        <span className="absolute -bottom-1.5 -left-1.5 w-3 h-px bg-border" />
+        <span className="absolute -bottom-1.5 -left-1.5 h-3 w-px bg-border" />
+        <span className="absolute -bottom-1.5 -right-1.5 w-3 h-px bg-border" />
+        <span className="absolute -bottom-1.5 -right-1.5 h-3 w-px bg-border" />
       </div>
 
       <motion.h2
@@ -157,7 +157,7 @@ export default function Cta8() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute bottom-4 sm:bottom-5 lg:bottom-6 left-0 right-0 text-center font-black leading-[0.85] select-none pointer-events-none text-neutral-900 dark:text-white"
+        className="absolute bottom-4 sm:bottom-5 lg:bottom-6 left-0 right-0 text-center font-black leading-[0.85] select-none pointer-events-none text-foreground"
         style={{
           fontSize: "clamp(64px, 22cqw, 340px)",
           WebkitMaskImage: maskImage,

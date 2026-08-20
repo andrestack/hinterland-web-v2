@@ -126,7 +126,7 @@ export default function FAQ7() {
   };
 
   return (
-    <section className="w-full bg-white px-4 py-16 dark:bg-neutral-950 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <section className="w-full bg-background px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="mx-auto w-full max-w-[1400px]">
         <motion.div
           initial={{ opacity: 0, y: reduce ? 0 : 16 }}
@@ -135,10 +135,10 @@ export default function FAQ7() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-2xl"
         >
-          <h2 className="text-3xl font-medium leading-[1.1] tracking-tighter text-neutral-900 dark:text-white sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-medium leading-[1.1] tracking-tighter text-foreground sm:text-4xl lg:text-5xl">
             Frequently asked questions
           </h2>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
             Answers organized the way you evaluate — from first login to
             security review.
           </p>
@@ -168,17 +168,17 @@ export default function FAQ7() {
                   aria-selected={isActive}
                   aria-controls={`faq7-panel-${category.id}`}
                   onClick={() => selectCategory(category.id)}
-                  className={`relative shrink-0 cursor-pointer rounded-xl px-4 py-3 text-left text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 dark:focus-visible:ring-white ${
+                  className={`relative shrink-0 cursor-pointer rounded-xl px-4 py-3 text-left text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                     isActive
-                      ? "text-neutral-900 dark:text-white"
-                      : "text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {isActive && (
                     <motion.span
                       layoutId="faq7-active-tab"
                       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                      className="absolute inset-0 rounded-xl bg-white shadow-sm ring-1 ring-neutral-200 dark:bg-neutral-900 dark:ring-neutral-800"
+                      className="absolute inset-0 rounded-xl bg-card shadow-sm ring-1 ring-border"
                     />
                   )}
                   <span className="relative z-10 flex items-center justify-between gap-4">
@@ -186,8 +186,8 @@ export default function FAQ7() {
                     <span
                       className={`text-xs tabular-nums transition-colors duration-200 ${
                         isActive
-                          ? "text-neutral-400 dark:text-neutral-500"
-                          : "text-neutral-400 dark:text-neutral-600"
+                          ? "text-muted-foreground"
+                          : "text-muted-foreground"
                       }`}
                     >
                       {category.faqs.length}
@@ -209,13 +209,13 @@ export default function FAQ7() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: reduce ? 0 : -8 }}
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="overflow-hidden rounded-3xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900"
+                className="overflow-hidden rounded-3xl border border-border bg-card"
               >
-                <div className="border-b border-neutral-200 px-6 py-5 dark:border-neutral-800 sm:px-8 sm:py-6">
-                  <h3 className="text-lg font-semibold tracking-tight text-neutral-900 dark:text-white">
+                <div className="border-b border-border px-6 py-5 sm:px-8 sm:py-6">
+                  <h3 className="text-lg font-semibold tracking-tight text-foreground">
                     {active.label}
                   </h3>
-                  <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     {active.description}
                   </p>
                 </div>
@@ -228,7 +228,7 @@ export default function FAQ7() {
                         variants={row}
                         className={
                           index !== active.faqs.length - 1
-                            ? "border-b border-neutral-200 dark:border-neutral-800"
+                            ? "border-b border-border"
                             : ""
                         }
                       >
@@ -237,9 +237,9 @@ export default function FAQ7() {
                           aria-expanded={isOpen}
                           aria-controls={`faq7-answer-${active.id}-${index}`}
                           onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                          className="group flex w-full cursor-pointer items-center justify-between gap-5 px-6 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-neutral-900 dark:focus-visible:ring-white sm:px-8 sm:py-6"
+                          className="group flex w-full cursor-pointer items-center justify-between gap-5 px-6 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary sm:px-8 sm:py-6"
                         >
-                          <span className="flex-1 text-base font-medium leading-snug text-neutral-900 transition-colors duration-200 group-hover:text-neutral-600 dark:text-white dark:group-hover:text-neutral-300">
+                          <span className="flex-1 text-base font-medium leading-snug text-foreground transition-colors duration-200 group-hover:text-muted-foreground">
                             {faq.question}
                           </span>
                           <motion.span
@@ -250,8 +250,8 @@ export default function FAQ7() {
                             }}
                             className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors duration-200 ${
                               isOpen
-                                ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
-                                : "bg-neutral-100 text-neutral-500 group-hover:text-neutral-900 dark:bg-neutral-800 dark:text-neutral-400 dark:group-hover:text-white"
+                                ? "bg-primary text-primary-foreground"
+                                : "bg-muted text-muted-foreground group-hover:text-foreground"
                             }`}
                           >
                             <Plus className="h-4 w-4" />
@@ -276,7 +276,7 @@ export default function FAQ7() {
                               }}
                               className="overflow-hidden"
                             >
-                              <p className="max-w-2xl px-6 pb-6 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 sm:px-8 sm:pb-7 sm:text-base">
+                              <p className="max-w-2xl px-6 pb-6 text-sm leading-relaxed text-muted-foreground sm:px-8 sm:pb-7 sm:text-base">
                                 {faq.answer}
                               </p>
                             </motion.div>

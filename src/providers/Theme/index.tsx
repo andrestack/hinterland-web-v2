@@ -34,17 +34,14 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   }, [])
 
   useEffect(() => {
+    // Dark is the true first-load default — system color-scheme preference is
+    // only consulted via the explicit "Auto" option (setTheme(null) below),
+    // not on initial paint.
     let themeToSet: Theme = defaultTheme
     const preference = window.localStorage.getItem(themeLocalStorageKey)
 
     if (themeIsValid(preference)) {
       themeToSet = preference
-    } else {
-      const implicitPreference = getImplicitPreference()
-
-      if (implicitPreference) {
-        themeToSet = implicitPreference
-      }
     }
 
     document.documentElement.setAttribute('data-theme', themeToSet)

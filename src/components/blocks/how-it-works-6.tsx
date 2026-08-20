@@ -71,15 +71,15 @@ function Node({
 
   return (
     <div className="relative grid place-items-center">
-      <span className="absolute h-14 w-14 rounded-full bg-white dark:bg-neutral-950" />
+      <span className="absolute h-14 w-14 rounded-full bg-card" />
       <motion.span
         style={{ opacity: ringOpacity }}
-        className="absolute h-14 w-14 rounded-full ring-[6px] ring-neutral-100 dark:ring-neutral-900"
+        className="absolute h-14 w-14 rounded-full ring-[6px] ring-muted"
       />
       {reached && (
         <motion.span
           aria-hidden
-          className="absolute h-12 w-12 rounded-full bg-orange-500"
+          className="absolute h-12 w-12 rounded-full bg-primary"
           initial={{ scale: 1, opacity: 0.5 }}
           animate={{ scale: 1.8, opacity: 0 }}
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeOut" }}
@@ -89,11 +89,11 @@ function Node({
         style={{ scale, opacity }}
         animate={
           reached
-            ? { backgroundColor: "rgb(249 115 22)", color: "rgb(255 255 255)" }
+            ? { backgroundColor: "rgb(201 162 75)", color: "rgb(255 255 255)" }
             : {}
         }
         transition={{ duration: 0.35 }}
-        className="relative grid place-items-center h-12 w-12 rounded-full bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
+        className="relative grid place-items-center h-12 w-12 rounded-full bg-primary text-primary-foreground"
       >
         <Icon className="h-5 w-5" />
       </motion.span>
@@ -108,20 +108,20 @@ function Card({ step, side }: { step: Step; side: "left" | "right" }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-20%" }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`w-full md:w-[44%] rounded-3xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.08)] overflow-hidden ${
+      className={`w-full md:w-[44%] rounded-3xl bg-card border border-border shadow-[0_8px_30px_-12px_rgba(0,0,0,0.08)] overflow-hidden ${
         side === "left" ? "md:mr-auto" : "md:ml-auto"
       }`}
     >
       <div className="p-5 sm:p-6">
-        <h3 className="text-base sm:text-lg font-semibold text-neutral-900 dark:text-white">
+        <h3 className="text-base sm:text-lg font-semibold text-foreground">
           {step.title}
         </h3>
-        <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
+        <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
           {step.copy}
         </p>
       </div>
       <div className="px-2 pb-2">
-        <div className="aspect-16/10 rounded-2xl overflow-hidden bg-neutral-100 dark:bg-neutral-800">
+        <div className="aspect-16/10 rounded-2xl overflow-hidden bg-muted">
           <img
             src={step.image}
             alt=""
@@ -187,14 +187,14 @@ export default function HowItWorks6() {
   const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <section className="relative w-full flex items-start py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-neutral-950 overflow-hidden">
+    <section className="relative w-full flex items-start py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-card overflow-hidden">
       <div className="relative max-w-[1400px] mx-auto w-full flex flex-col items-center">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="text-xs tracking-[0.2em] text-neutral-500 dark:text-neutral-500 uppercase"
+          className="text-xs tracking-[0.2em] text-muted-foreground uppercase"
         >
           How it works
         </motion.p>
@@ -204,7 +204,7 @@ export default function HowItWorks6() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mt-6 text-3xl sm:text-5xl md:text-6xl font-medium text-neutral-900 dark:text-white text-center tracking-tight leading-[1.05] max-w-xl"
+          className="mt-6 text-3xl sm:text-5xl md:text-6xl font-medium text-foreground text-center tracking-tight leading-[1.05] max-w-xl"
         >
           Four steps from blank page to launch day
         </motion.h2>
@@ -214,7 +214,7 @@ export default function HowItWorks6() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mt-5 max-w-sm text-center text-base text-neutral-600 dark:text-neutral-400"
+          className="mt-5 max-w-sm text-center text-base text-muted-foreground"
         >
           A quiet, opinionated workflow that stays out of your way and hands the
           craft back to you.
@@ -224,7 +224,7 @@ export default function HowItWorks6() {
           <div
             aria-hidden
             style={{ top: lineBounds.top, height: lineBounds.height }}
-            className="absolute left-1/2 -translate-x-1/2 w-px border-l border-dashed border-neutral-300 dark:border-neutral-700"
+            className="absolute left-1/2 -translate-x-1/2 w-px border-l border-dashed border-border"
           />
           <motion.div
             aria-hidden
@@ -234,7 +234,7 @@ export default function HowItWorks6() {
               scaleY: lineScale,
               transformOrigin: "top",
             }}
-            className="absolute left-1/2 -translate-x-1/2 w-px bg-neutral-900 dark:bg-white"
+            className="absolute left-1/2 -translate-x-1/2 w-px bg-primary"
           />
 
           <div className="flex flex-col gap-16 sm:gap-24">

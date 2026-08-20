@@ -10,33 +10,18 @@ export const InitTheme: React.FC = () => {
       dangerouslySetInnerHTML={{
         __html: `
   (function () {
-    function getImplicitPreference() {
-      var mediaQuery = '(prefers-color-scheme: dark)'
-      var mql = window.matchMedia(mediaQuery)
-      var hasImplicitPreference = typeof mql.matches === 'boolean'
-
-      if (hasImplicitPreference) {
-        return mql.matches ? 'dark' : 'light'
-      }
-
-      return null
-    }
-
     function themeIsValid(theme) {
       return theme === 'light' || theme === 'dark'
     }
 
+    // Dark is the true first-load default — system color-scheme preference is
+    // only consulted when the user explicitly picks "Auto" in the theme
+    // selector (see getImplicitPreference in shared.ts / ThemeProvider).
     var themeToSet = '${defaultTheme}'
     var preference = window.localStorage.getItem('${themeLocalStorageKey}')
 
     if (themeIsValid(preference)) {
       themeToSet = preference
-    } else {
-      var implicitPreference = getImplicitPreference()
-
-      if (implicitPreference) {
-        themeToSet = implicitPreference
-      }
     }
 
     document.documentElement.setAttribute('data-theme', themeToSet)

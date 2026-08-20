@@ -4,6 +4,8 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronUp, ChevronDown } from "lucide-react";
 
+import { ThemeSelector } from "@/providers/Theme/ThemeSelector";
+
 export function Navigation5() {
   const [isExpanded, setIsExpanded] = useState(false);
   const navContainerRef = useRef<HTMLDivElement>(null);
@@ -50,7 +52,7 @@ export function Navigation5() {
         <div className="max-w-2xl mx-auto pointer-events-auto">
           <div
             ref={navContainerRef}
-            className="rounded-2xl bg-white dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 shadow-xl overflow-hidden"
+            className="rounded-2xl bg-card border border-border shadow-xl overflow-hidden"
           >
             <AnimatePresence>
               {isExpanded && (
@@ -66,10 +68,10 @@ export function Navigation5() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, delay: 0.1 }}
-                      className="w-10 h-10 bg-neutral-900 dark:bg-white rounded-sm flex items-center justify-center"
+                      className="w-10 h-10 bg-primary rounded-sm flex items-center justify-center"
                     >
                       <svg
-                        className="w-6 h-6 text-white dark:text-neutral-900"
+                        className="w-6 h-6 text-primary-foreground"
                         viewBox="0 0 24 24"
                         fill="currentColor"
                       >
@@ -83,12 +85,12 @@ export function Navigation5() {
                       transition={{ duration: 0.3, delay: 0.15 }}
                       className="flex items-center justify-between"
                     >
-                      <div className="text-2xl font-medium text-neutral-900 dark:text-white leading-tight">
-                        This is Trok
+                      <div className="text-2xl font-medium text-foreground leading-tight">
+                        Hinterland Web
                       </div>
                       <a
                         href="#"
-                        className="px-4 py-2 rounded-sm bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-xs font-medium hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-colors no-underline"
+                        className="px-4 py-2 rounded-sm bg-primary text-primary-foreground text-xs font-medium hover:opacity-90 transition-colors no-underline"
                       >
                         Let&apos;s talk
                       </a>
@@ -110,21 +112,21 @@ export function Navigation5() {
                             duration: 0.3,
                             delay: 0.25 + index * 0.05,
                           }}
-                          className={`flex items-center justify-between px-4 py-3 border-t hover:bg-neutral-100 dark:hover:bg-neutral-800/50 transition-colors no-underline group cursor-pointer ${
+                          className={`flex items-center justify-between px-4 py-3 border-t hover:bg-muted transition-colors no-underline group cursor-pointer ${
                             index === navItems.length - 1
-                              ? "border-neutral-200 dark:border-neutral-800 border-b"
-                              : "border-neutral-200 dark:border-neutral-800"
+                              ? "border-border border-b"
+                              : "border-border"
                           }`}
                         >
                           <div className="flex items-center gap-3">
-                            <div className="w-16 h-12 bg-neutral-200 dark:bg-neutral-800 rounded-lg overflow-hidden shrink-0 group-hover:w-[84px] transition-all duration-200">
+                            <div className="w-16 h-12 bg-muted rounded-lg overflow-hidden shrink-0 group-hover:w-[84px] transition-all duration-200">
                               <img
                                 src={item.image}
                                 alt={item.title}
                                 className="w-full h-full object-cover"
                               />
                             </div>
-                            <span className="text-base font-light text-neutral-900 dark:text-white group-hover:text-neutral-600 dark:group-hover:text-neutral-300 transition-colors">
+                            <span className="text-base font-light text-foreground group-hover:text-muted-foreground transition-colors">
                               {item.title}
                             </span>
                           </div>
@@ -134,7 +136,7 @@ export function Navigation5() {
                               {item.tags.map((tag) => (
                                 <span
                                   key={tag}
-                                  className="text-xs text-neutral-500 dark:text-neutral-400"
+                                  className="text-xs text-muted-foreground"
                                 >
                                   {tag}
                                 </span>
@@ -148,6 +150,16 @@ export function Navigation5() {
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: 0.4 }}
+                      className="flex items-center justify-between border-t border-border pt-3"
+                    >
+                      <span className="text-xs text-muted-foreground">Theme</span>
+                      <ThemeSelector />
+                    </motion.div>
+
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, delay: 0.5 }}
                       className="space-y-1 pt-2"
                     >
@@ -155,7 +167,7 @@ export function Navigation5() {
                         <a
                           key={link.name}
                           href={link.href}
-                          className="block text-xs text-neutral-500 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors no-underline"
+                          className="block text-xs text-muted-foreground hover:text-foreground transition-colors no-underline"
                         >
                           {link.name}
                         </a>
@@ -170,7 +182,7 @@ export function Navigation5() {
               onClick={() => setIsExpanded(!isExpanded)}
               className="w-full flex items-center justify-between px-6 py-4 cursor-pointer transition-colors"
             >
-              <div className="flex items-center gap-2 text-neutral-900 dark:text-white">
+              <div className="flex items-center gap-2 text-foreground">
                 {isExpanded ? (
                   <>
                     <ChevronDown className="w-5 h-5" />
@@ -184,7 +196,7 @@ export function Navigation5() {
                 )}
               </div>
 
-              <div className="text-sm font-medium text-neutral-500 dark:text-neutral-500">
+              <div className="text-sm font-medium text-muted-foreground">
                 Home
               </div>
             </button>

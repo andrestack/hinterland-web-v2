@@ -95,13 +95,13 @@ function TestimonialCard({
   return (
     <motion.article
       variants={card}
-      className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm shadow-neutral-900/5 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-none sm:p-7"
+      className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-7"
     >
       <p
         className={
           featured
-            ? "text-lg font-medium leading-relaxed text-neutral-900 dark:text-white"
-            : "text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400"
+            ? "text-lg font-medium leading-relaxed text-foreground"
+            : "text-[15px] leading-relaxed text-muted-foreground"
         }
       >
         &ldquo;{testimonial.quote}&rdquo;
@@ -114,15 +114,15 @@ function TestimonialCard({
             className="h-10 w-10 rounded-full object-cover"
           />
           <div>
-            <p className="text-sm font-semibold text-neutral-900 dark:text-white">
+            <p className="text-sm font-semibold text-foreground">
               {testimonial.name}
             </p>
-            <p className="text-xs text-neutral-500 dark:text-neutral-400">
+            <p className="text-xs text-muted-foreground">
               {testimonial.role}
             </p>
           </div>
         </div>
-        <span className="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+        <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           {testimonial.company}
         </span>
       </div>
@@ -132,7 +132,7 @@ function TestimonialCard({
 
 export default function SocialProof14() {
   return (
-    <section className="w-full bg-white px-4 py-16 dark:bg-neutral-950 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <section className="w-full bg-background px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 gap-12 lg:grid-cols-12">
         <motion.div
           variants={rail}
@@ -141,21 +141,21 @@ export default function SocialProof14() {
           viewport={{ once: true, margin: "-80px" }}
           className="lg:sticky lg:top-24 lg:col-span-4 lg:self-start"
         >
-          <h2 className="max-w-xl text-balance text-3xl font-semibold leading-tight tracking-tight text-neutral-900 dark:text-white sm:text-4xl">
+          <h2 className="max-w-xl text-balance text-3xl font-semibold leading-tight tracking-tight text-foreground sm:text-4xl">
             Notes we never asked anyone to write.
           </h2>
-          <p className="mt-5 max-w-lg text-base leading-relaxed text-neutral-600 dark:text-neutral-400 sm:text-lg">
+          <p className="mt-5 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
             Tempo keeps decisions, context, and momentum in one place. These
             arrived unprompted, from the first 2,400 teams to make the switch.
           </p>
           <div className="mt-7 flex items-center gap-3">
-            <div className="flex items-center gap-0.5 text-neutral-900 dark:text-white">
+            <div className="flex items-center gap-0.5 text-foreground">
               {[0, 1, 2, 3, 4].map((star) => (
                 <Star key={star} className="h-4 w-4 fill-current" />
               ))}
             </div>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400">
-              <span className="font-semibold text-neutral-900 dark:text-white">
+            <p className="text-sm text-muted-foreground">
+              <span className="font-semibold text-foreground">
                 4.9
               </span>{" "}
               across 2,400+ reviews
@@ -163,7 +163,7 @@ export default function SocialProof14() {
           </div>
           <a
             href="#"
-            className="mt-9 inline-flex w-full items-center justify-center gap-2 rounded-full border border-neutral-300 px-6 py-3 text-sm font-medium text-neutral-900 transition-colors hover:bg-neutral-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-900 dark:focus-visible:ring-white dark:focus-visible:ring-offset-neutral-950 sm:w-auto"
+            className="mt-9 inline-flex w-full items-center justify-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:w-auto"
           >
             Read every review
             <ArrowRight className="h-4 w-4" />

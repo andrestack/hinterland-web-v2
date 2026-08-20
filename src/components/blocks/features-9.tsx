@@ -104,14 +104,14 @@ export default function Features9() {
   const data = content[active];
 
   return (
-    <section className="w-full min-h-[var(--rb-section-min-h,100vh)] flex items-start py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-neutral-950">
+    <section className="w-full min-h-[var(--rb-section-min-h,100vh)] flex items-start py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-card">
       <div className="max-w-[1400px] mx-auto w-full">
         <motion.h2
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.3 }}
-          className="text-center font-serif text-3xl sm:text-5xl md:text-6xl text-neutral-900 dark:text-white tracking-tight leading-tight"
+          className="text-center font-serif text-3xl sm:text-5xl md:text-6xl text-foreground tracking-tight leading-tight"
         >
           Built to <span className="italic">power</span>
           <br />
@@ -128,22 +128,22 @@ export default function Features9() {
                 onClick={() => setActive(p.key)}
                 className={`group relative flex sm:flex-col items-center justify-start sm:justify-center text-center gap-2 sm:gap-5 rounded-xl px-3 sm:px-6 py-2.5 sm:py-10 border transition-colors cursor-pointer shrink-0 sm:shrink ${
                   isActive
-                    ? "bg-white dark:bg-neutral-900 border-neutral-300 dark:border-neutral-700 shadow-sm"
-                    : "bg-neutral-50 dark:bg-neutral-900/40 border-transparent hover:bg-white dark:hover:bg-neutral-900"
+                    ? "bg-card border-primary/40 shadow-sm"
+                    : "bg-muted/40 border-transparent hover:bg-card"
                 }`}
               >
                 <div
                   className={`flex items-center justify-center w-7 h-7 sm:w-16 sm:h-16 rounded-full shrink-0 ${
                     isActive
-                      ? "bg-neutral-100 dark:bg-neutral-800"
-                      : "bg-white dark:bg-neutral-900"
+                      ? "bg-muted"
+                      : "bg-card"
                   }`}
                 >
                   <Icon
                     className={`w-3.5 h-3.5 sm:w-8 sm:h-8 ${
                       isActive
-                        ? "text-neutral-900 dark:text-white"
-                        : "text-neutral-400 dark:text-neutral-600"
+                        ? "text-foreground"
+                        : "text-muted-foreground"
                     }`}
                     strokeWidth={1.5}
                   />
@@ -151,8 +151,8 @@ export default function Features9() {
                 <span
                   className={`text-xs sm:text-base font-medium whitespace-nowrap ${
                     isActive
-                      ? "text-neutral-900 dark:text-white"
-                      : "text-neutral-500 dark:text-neutral-500"
+                      ? "text-foreground"
+                      : "text-muted-foreground"
                   }`}
                 >
                   {p.label}
@@ -163,7 +163,7 @@ export default function Features9() {
                     className="absolute inset-0 -z-10 rounded-xl pointer-events-none"
                     style={{
                       background:
-                        "radial-gradient(circle at 70% 50%, rgba(147,197,253,0.35), transparent 60%)",
+                        "radial-gradient(circle at 70% 50%, rgba(201,162,75,0.35), transparent 60%)",
                     }}
                   />
                 )}
@@ -177,16 +177,16 @@ export default function Features9() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="mt-10 pt-8 border-t border-neutral-200 dark:border-neutral-800 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12"
+          className="mt-10 pt-8 border-t border-border grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12"
         >
           <div className="flex flex-col gap-5">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-medium text-neutral-900 dark:text-white tracking-tight leading-tight">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-medium text-foreground tracking-tight leading-tight">
               {data.ctaTitle}
             </h3>
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="self-start px-5 py-2.5 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-sm text-neutral-900 dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
+              className="self-start px-5 py-2.5 rounded-lg border border-border bg-card text-sm text-foreground hover:bg-muted transition-colors cursor-pointer"
             >
               {data.buttonLabel}
             </motion.button>
@@ -194,10 +194,10 @@ export default function Features9() {
           <div className="flex flex-col gap-8">
             {data.blocks.map((b, i) => (
               <div key={i} className="flex flex-col gap-2">
-                <h4 className="text-base sm:text-lg font-semibold text-neutral-900 dark:text-white">
+                <h4 className="text-base sm:text-lg font-semibold text-foreground">
                   {b.title}
                 </h4>
-                <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                   {b.desc}
                 </p>
               </div>
