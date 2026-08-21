@@ -1,4 +1,4 @@
-import { Navigation5 } from '@/components/blocks/navigation-5'
+import { Navigation12 } from '@/components/blocks/navigation-12'
 import { Hero12 } from '@/components/blocks/hero-12'
 import SocialProof14 from '@/components/blocks/social-proof-14'
 import Features9 from '@/components/blocks/features-9'
@@ -11,7 +11,7 @@ import Footer7 from '@/components/blocks/footer-7'
 export default function PreviewHomePage() {
   return (
     <>
-      <Navigation5 />
+      <Navigation12 />
       <Hero12 />
       <SocialProof14 />
       <Features9 />
